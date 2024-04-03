@@ -1,0 +1,35 @@
+/* table-styles.css */
+table {
+  border-collapse: collapse;
+  width: 100%; 
+}
+
+th, td {
+  border: 1px solid #ddd; 
+  padding: 10px;/* Significantly reduced padding */
+  text-align: center;
+  font-size: 13px; /* Smaller font size */
+
+  /* Shaded Inner Box */
+ 
+  margin: 3px; /* Reduced margin */ 
+
+  /* Word Handling (Choose One) */
+  /* Option 1: Word Break
+  word-break: break-all; */
+
+  
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+th { 
+  text-transform: uppercase;
+  font-size: 11px; /* Slightly smaller header text */
+}
+
+/*tr:nth-child(even) { 
+  background-color: #f8f8f8;
+ } */
