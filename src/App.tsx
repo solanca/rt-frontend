@@ -1,24 +1,16 @@
 import React, { useEffect,useState, useContext } from 'react';
 import { AppBar, Box, Button, CssBaseline, ThemeProvider, Toolbar, Typography, IconButton, createTheme, Tooltip, Menu, MenuItem, Switch } from '@mui/material';
+
+// css
+import './assets/css/App.css';
+import './assets/css/table-styles.css';
+
+//icons n graphic stuff
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChartLine, faBroadcastTower, faRobot, faComments, faCog } from '@fortawesome/free-solid-svg-icons';
-import './assets/css/App.css';
-import './assets/css/table-styles.css';
-import logo from './assets/logo.svg';
-import { TradingPairProvider } from './pages/components/TradingPairContext';
-import { DarkModeContext, DarkModeProvider } from './pages/components/DarkModeContext';
-import { usePanelVisibility } from './pages/components/PanelVisibilityContext'; // Update the path as necessary
-import { PanelVisibilityProvider } from './pages/components/PanelVisibilityContext';
-import { ActivePageProvider } from './pages/components/ActivePageContext';
-import { useActivePage } from './pages/components/ActivePageContext'; // Ensure correct path
-
-import { ReactFlowProvider} from '@xyflow/react';
-
-
-
 import { ListItemIcon, Divider } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import HelpIcon from '@mui/icons-material/HelpOutline';
@@ -34,10 +26,17 @@ import GTranslateIcon from '@mui/icons-material/GTranslate'; // Assuming this is
 import KeyboardIcon from '@mui/icons-material/Keyboard'; // Assuming this is for "Keyboard shortcuts"
 import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows'; // Assuming this is for "Get desktop app"
 import ExitToAppIcon from '@mui/icons-material/ExitToApp'; // Assuming this is for "Sign out"
+import logo from './assets/logo.svg';
 
+// contexts and global
+import { TradingPairProvider } from './pages/components/TradingPairContext';
+import { DarkModeContext, DarkModeProvider } from './pages/components/DarkModeContext';
+import { usePanelVisibility } from './pages/components/PanelVisibilityContext'; // Update the path as necessary
+import { PanelVisibilityProvider } from './pages/components/PanelVisibilityContext';
+import { ActivePageProvider } from './pages/components/ActivePageContext';
+import { useActivePage } from './pages/components/ActivePageContext'; // Ensure correct path
 
 // main control left bar
-
 import HomeComponent from './pages/HomeComponent';
 import TradeEngineComponent from './pages/TradeEngineComponent';
 import FlowComponent from './pages/FlowComponent';
@@ -58,53 +57,62 @@ import CalculatorComponent from './panel/CalculatorComponent';
 
 import HomePanel from './HomePanel';
 
+interface PanelComponents {
+  watchlist: React.ComponentType;
+  alerts: React.ComponentType;
+  hotlist: React.ComponentType;
+  calendar: React.ComponentType;
+  notes: React.ComponentType;
+  chats: React.ComponentType;
+  ideasStream: React.ComponentType;
+  liveStreams: React.ComponentType;
+  calculator: React.ComponentType;
+}
 
-const panelComponents = {
-    watchlist: WatchlistComponent,
-    alerts: AlertsComponent,
-    hotlist: HotlistComponent,
-    calendar: CalendarComponent,
-    notes: NotesComponent,
-    chats: ChatsComponent,
-    ideasStream: IdeasStreamComponent,
-    liveStreams: LiveStreamsComponent,
-    calculator: CalculatorComponent,
+const panelComponents: PanelComponents = {
+  watchlist: WatchlistComponent,
+  alerts: AlertsComponent,
+  hotlist: HotlistComponent,
+  calendar: CalendarComponent,
+  notes: NotesComponent,
+  chats: ChatsComponent,
+  ideasStream: IdeasStreamComponent,
+  liveStreams: LiveStreamsComponent,
+  calculator: CalculatorComponent,
 };
 
-function MainApp() {
+const App: React.FC = () => {
 
-    const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-    const theme = createTheme({ palette: { mode: darkMode ? 'dark' : 'light' } });
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext); 
 
-    const { setActivePage } = useActivePage(); // Use setActivePage from context
+  const theme = createTheme({ palette: { mode: darkMode ? 'dark' : 'light' } });
+
+  const { setActivePage } = useActivePage();
 
     // States for right sidebar panels
-    const [isWatchlistVisible, setWatchlistVisible] = useState(false);
-    const [isAlertsVisible, setAlertsVisible] = useState(false);
-    const [isHotlistVisible, setHotlistVisible] = useState(false);
-    const [isCalendarVisible, setCalendarVisible] = useState(false);
-    const [isNotesVisible, setNotesVisible] = useState(false);
-    const [isChatsVisible, setChatsVisible] = useState(false);
-    const [isIdeasStreamVisible, setIdeasStreamVisible] = useState(false);
-    const [isLiveStreamsVisible, setLiveStreamsVisible] = useState(false);
-    const [isCalculatorVisible, setCalculatorVisible] = useState(false);
+  const [isWatchlistVisible, setWatchlistVisible] = useState<boolean>(false);
+  const [isAlertsVisible, setAlertsVisible] = useState<boolean>(false);
+  const [isHotlistVisible, setHotlistVisible] = useState<boolean>(false);
+  const [isCalendarVisible, setCalendarVisible] = useState<boolean>(false);
+  const [isNotesVisible, setNotesVisible] = useState<boolean>(false);
+  const [isChatsVisible, setChatsVisible] = useState<boolean>(false);
+  const [isIdeasStreamVisible, setIdeasStreamVisible] = useState<boolean>(false);
+  const [isLiveStreamsVisible, setLiveStreamsVisible] = useState<boolean>(false);
+  const [isCalculatorVisible, setCalculatorVisible] = useState<boolean>(false);
 
-    // State for main content area (left bar menu)
-    const [mainContent, setMainContent] = useState("home"); // default to "home"
-
-
+    // State for main content area (set by left bar menu)
+  const [mainContent, setMainContent] = useState<string>("home"); // default to "home"
 
     // Handler functions to update the main content state
-    const showHome = () => setMainContent("home");
-    const showTradeEngine = () => setMainContent("tradeEngine");
-    const showSignals = () => setMainContent("signals");
-    const showBots = () => setMainContent("bots");
-    const showPortfolioAnalytics = () => setMainContent("portfolioAnalytics");
-    const showSettings = () => setMainContent("settings");
-
+  const showHome = (): void => setMainContent("home");
+  const showTradeEngine = (): void => setMainContent("tradeEngine");
+  const showSignals = (): void => setMainContent("signals");
+  const showBots = (): void => setMainContent("bots");
+  const showPortfolioAnalytics = (): void => setMainContent("portfolioAnalytics");
+  const showSettings = (): void => setMainContent("settings");
 
     // State to track the active panel
-    const [activePanel, setActivePanel] = useState(null);
+    const [activePanel, setActivePanel] = useState<string | null>(null);
 
     // which panel component to switch to
     const ActivePanelComponent = panelComponents[activePanel];
@@ -112,17 +120,12 @@ function MainApp() {
     // right panel visiblity
     const { isPanelVisible, setPanelVisible } = usePanelVisibility();
 
-
-    // Function to toggle panels
-    const togglePanel = (panel) => {
-        setActivePanel(activePanel === panel ? null : panel);
-    };
+    // Function to toggle right panel flip outs panels
+    const togglePanel = (panel: string) => setActivePanel(activePanel === panel ? null : panel);
 
     const handleToggle = () => {
         setPanelVisible(!isPanelVisible);
     };
-
-
 
     // Functions to toggle visibility of right sidebar panels
     const toggleWatchlist = () => setWatchlistVisible(!isWatchlistVisible);
@@ -142,23 +145,23 @@ function MainApp() {
         setActivePage(content);  // Update context
     };
 
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
     const isMenuOpen = Boolean(anchorEl);
-
-    const handleProfileMenuOpen = (event) => {
+    
+    const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
-
+    
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
-
-    const handleThemeChange = (event) => {
+    
+    const handleThemeChange = (event: React.MouseEvent) => {
         event.stopPropagation(); // Prevents the menu from closing
         toggleDarkMode();
     };
-
+    
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
         <Menu
@@ -336,26 +339,6 @@ function MainApp() {
   </ThemeProvider>
 
 );
-};
-
-function App() {
-
-
-    return (
-  <ReactFlowProvider>
-    <ActivePageProvider>
-        <PanelVisibilityProvider>
-    <DarkModeProvider>
-      <TradingPairProvider>
-        <MainApp />
-      </TradingPairProvider>
-      
-    </DarkModeProvider>
-      </PanelVisibilityProvider>
-          </ActivePageProvider>
-           </ReactFlowProvider>
-
-    );
 }
 
 export default App;
