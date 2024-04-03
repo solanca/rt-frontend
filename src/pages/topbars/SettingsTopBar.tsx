@@ -4,13 +4,17 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 function SettingsTopBar() {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <div className="TopBarPanel">
+   <div className="TopBarContent">
       <IconButton>
         <SettingsIcon />
       </IconButton>
       {/* Add more icons or components specific to SettingsTopBar */}
+      <>
       <p>Settings Top Bar Placeholder</p>
-    </Box>
+   </>
+       </div>
+</div>
   );
 }
 

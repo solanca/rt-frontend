@@ -77,12 +77,9 @@ const newNode = {
 return (
 
 <>
-<AppBar position="static"> 
-<div className="TopBarPanel">
+
 <SignalsTopBar onBackgroundChange={handleBackgroundChange} />
-    </div>
-  
-    </AppBar>
+ 
 
     <ReactFlow
       nodes={nodes}

@@ -4,13 +4,15 @@ import HomeIcon from '@mui/icons-material/Home';
 
 function HomeTopBar() {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <div className="TopBarPanel">
+    <div className="TopBarContent">
       <IconButton>
         <HomeIcon />
       </IconButton>
       {/* Add more icons or components specific to HomeTopBar */}
       <p>Home Top Bar Placeholder</p>
-    </Box>
+      </div>
+</div>
   );
 }
 

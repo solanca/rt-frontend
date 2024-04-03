@@ -95,7 +95,9 @@ function SignalsTopBar({ onBackgroundChange }) {
 
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+    <div className="TopBarPanel">
+    <div className="TopBarContent">
+    <Box sx={{ display: 'flex', alignItems: 'center', width: '90%' }}>
      
 
       {/* Draggable Nodes */}
@@ -195,6 +197,8 @@ function SignalsTopBar({ onBackgroundChange }) {
 
       </Box>
     </Box>
+    </div>
+    </div>
   );
 }
 

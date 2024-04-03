@@ -64,12 +64,8 @@ function HomeComponent() {
 
   return (
 <>
-    <AppBar position="static"> 
-<div className="TopBarPanel">
         <HomeTopBar />
-    </div>
-  
-    </AppBar>
+
 
     <div style={containerStyle}>
       <h1>Welcome to your trading app</h1>

@@ -26,7 +26,7 @@
 }
 
 
-/* mui bullshit */
+/* mui */
 
 /*/.MuiSvgIcon-root{
 //     margin:0px 0px 24px;
@@ -101,7 +101,12 @@ background: rgba(0,0,0,0.2);
  
 }
 
-
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Nunito Sans', sans-serif; 
@@ -114,50 +119,67 @@ h1, h2, h3 {
   margin-bottom: 1em; 
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Ensures padding and borders are included in the total width and height */
+}
+
+
 .app-container {
   height:100vh;
   overflow:hidden;
+  width: 100%;
 }
 
-/* top bar nonsense *****************************/ 
+/* top bar nonsense ************************** ;***/ 
 
-.TopBarPanel {
-  display: delx;
-  align-items: flex;
+.TopBarContent {
+  display: flex;
+  align-items: center; /* Change from flex to center to vertically align items */
   justify-content: space-between;
-  
+  background-color: rgba(49, 47, 47, 0.07);
   height: 35px;
-  min-width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
   margin: 0;
-}
-
-
-.TopBarPanel {
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
-
-
+.TopBarPanel {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the top bar is above other content */
+}
 
 .UserMenuPanel {
-  margin-top:0;
-margin-right: 21px;
+  margin-top:0px;
+margin-right: 0px;
 }
 
 
 
 .App-logo {
   
-  height: 30px;
+  height: 22px;
+  wdith: 22px;
   pointer-events: none;
   animation: App-logo-spin infinite 20s linear;
 
 }
+MuiButtonBase-root {
+ height: 22px;
+  width: 22px;
+
+
+}
+
+
 
 .userAccountMenu {
-  
-margin-left: 3px;
+  height: 50px;
+margin-left: 12px;
 margin-top: -14px;
 
 }
@@ -188,6 +210,7 @@ margin-top: -14px;
 
 
 .content-container {
+  padding-top: 35px;
   display: flex; 
 flex-grow: 1;
   flex-direction: row ; 
@@ -249,7 +272,6 @@ width: auto;
 }
 
 .right-sidebar {
-  margin-top: 35px;
   border-left: 1px solid #444; 
    width: 48px;  /* Adjust based on your desired width */
 overflow:hidden;

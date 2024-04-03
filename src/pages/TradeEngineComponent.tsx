@@ -18,12 +18,11 @@ function TradeEngineComponent() {
 
 return (
   <>
- <AppBar position="static"> 
-<div className="TopBarPanel">
+
+
         <DefaultTopBar />
-    </div>
-  
-    </AppBar>
+   
+
             <TVWidget />
         </>
 )

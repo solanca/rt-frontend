@@ -81,7 +81,7 @@ function ExchangeAPICreate({ onSave, onCancel }) {
 {tabValue === 'live' && (
         <Box sx={notificationBoxStyle}>
           <List dense>
-            {['Log in to your Kucoin account and go to API Settings', 'Activate IP whitelisting and copy/paste the list of IP addresses below', 'Make sure you apply the correct permissions for trading on Spot and or Futures', 'Fill in all the fields like "API Key" and "Secret", in the form below.'].map((text, index) => (
+            {['Log in to your Exchange account and go to API Settings', 'Activate IP whitelisting and other desired options', 'Make sure you apply the correct permissions for trading on Spot and or Futures', 'Fill in all the fields like "API Key" and "Secret", in the form below.'].map((text, index) => (
               <ListItem key={index}>
                 <ListItemIcon>
                   {/* Numbered LensIcon */}

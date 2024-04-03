@@ -9,10 +9,6 @@ import DatabaseSettings from './settings/DatabaseSettings'
 import NotificationSettings from './settings/NotificationSettings'
 import AppSettings from './settings/AppSettings'
 import SettingsTopBar from './topbars/SettingsTopBar';
-import {AppBar }from '@mui/material';
-
-
-
 
 function SettingsComponent() {
   const [value, setValue] = useState(0);
@@ -105,13 +101,9 @@ const settingsPanelStyle = {
 return (
 
 <>
-<AppBar position="static"> 
-<div className="TopBarPanel">
-<SettingsTopBar  />
-    </div>
-  
-    </AppBar>
 
+<SettingsTopBar  />
+ 
   
     <Box sx={settingsPanelStyle}>
       <Tabs

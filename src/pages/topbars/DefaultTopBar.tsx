@@ -39,8 +39,8 @@ function DefaultTopBar() {
   const icons = [<HomeIcon />, <SettingsIcon />, <NotificationsIcon />]; // Add more icons as needed
 
   return (
-    <Box sx={{ display: 'flex', width: '100%' }}>
-      <Box className="TopBarPanel">
+    <div className="TopBarPanel">
+    <div className="TopBarContent">
         <IconButton onClick={() => { /* Logic to scroll left */ }}>
           <ArrowBackIosIcon />
         </IconButton>
@@ -77,7 +77,8 @@ function DefaultTopBar() {
         <IconButton onClick={() => { /* Logic to scroll right */ }}>
           <ArrowForwardIosIcon />
         </IconButton>
-      </Box>
+      
+      
       <Box className="UserInfoSection" sx={{
   minWidth: '130px',
   height: '38px', // Ensure the height matches the parent
@@ -94,7 +95,7 @@ function DefaultTopBar() {
   }}>
     <small>0.000345 BTC</small>
     <small sx={{ fontSize: '0.45rem', lineHeight: '0' }}>Balance: $100</small>
-  </Box>
+  
   
   <IconButton
     aria-label="more"
@@ -116,8 +117,10 @@ function DefaultTopBar() {
     <MenuItem onClick={handleUserMenuClose}>Option 2</MenuItem>
     <MenuItem onClick={handleUserMenuClose}>Option 3</MenuItem>
   </Menu>
-</Box>
+  </Box>
     </Box>
+    </div>
+    </div>
   );
 }
 
