@@ -15,25 +15,25 @@ export const nodes: Node<TurboNodeData>[] = [
   {
     id: '1',
     position: { x: 0, y: 0 },
-    data: { icon: <FunctionIcon />, title: 'readFile', subline: 'api.ts' },
+    data: { icon: <FunctionIcon />, title: 'SMA', subline: 'Binance' },
     type: 'turbo',
   },
   {
     id: '2',
     position: { x: 250, y: 0 },
-    data: { icon: <FunctionIcon />, title: 'bundle', subline: 'apiContents' },
+    data: { icon: <FunctionIcon />, title: 'Logic', subline: 'takeprofit' },
     type: 'turbo',
   },
   {
     id: '3',
     position: { x: 0, y: 250 },
-    data: { icon: <FunctionIcon />, title: 'readFile', subline: 'sdk.ts' },
+    data: { icon: <FunctionIcon />, title: 'Volume', subline: '60 mins' },
     type: 'turbo',
   },
   {
     id: '4',
     position: { x: 250, y: 250 },
-    data: { icon: <FunctionIcon />, title: 'bundle', subline: 'sdkContents' },
+    data: { icon: <FunctionIcon />, title: 'Logic', subline: 'dca' },
     type: 'turbo',
   },
   {
@@ -47,14 +47,14 @@ export const nodes: Node<TurboNodeData>[] = [
   {
     id: '6',
     position: { x: 750, y: 125 },
-    data: { icon: <FiFile />, title: 'fullBundle' },
+    data: { icon: <FiFile />, title: 'Exchange Output' },
     type: 'turbo',
   },
    {
     id: '7',
     type: 'turbo',
     className: 'annotation',
-     data: { icon: <FunctionIcon />, title: '</strong>', subline: 'This is also just a node 🥳'},
+     data: { icon: <FunctionIcon />, title: 'Note', subline: 'This is also just a node 🥳'},
     draggable: false,
     selectable: false,
     position: { x: 150, y: 400 },
