@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Treebeard } from 'react-treebeard';
+import DefaultTopBar from './topbars/DefaultTopBar';
 
 function BotsComponent() {
   const style = {
@@ -13,8 +13,11 @@ function BotsComponent() {
   };
 
   return (
+    <div className = "flex-item">
+      <DefaultTopBar  />
     <div style={style}>
       <h1>Strategy Engine</h1>
+    </div>
     </div>
   );
 }

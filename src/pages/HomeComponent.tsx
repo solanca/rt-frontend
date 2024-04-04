@@ -64,6 +64,7 @@ function HomeComponent() {
 
   return (
 <>
+<div className = "flex-item">
         <HomeTopBar />
 
 
@@ -89,6 +90,7 @@ function HomeComponent() {
           <p>Here's some text about the app. Maybe a quick guide or an overview of features.</p>
           <p>Feel free to explore the documentation on the right to get more information about the available functionalities.</p>
         </div>
+    </div>
     </div>
     </>
   );

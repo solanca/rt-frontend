@@ -230,7 +230,8 @@ width: auto;
 
 .flex-item {
   flex-grow: 1; /* This will allow the item to grow and fill available space */
-  width:100%;
+  flex-direction: row;
+  width: 100%;
   height:100vh;
 }
 
@@ -323,9 +324,28 @@ overflow:hidden;
 
 /* WIDGET CRAP ********************************************/ 
 
-.widget-container {
+
+.tradingview-widget-container {
+  
+width: 90% !important;
+
+}
+
+.orderWidget {
   display: flex;
   flex-direction: column;
+  width: 310px;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+padding: 9px;
+}
+
+
+  .widget-container { 
+  display: flex;
+  flex-direction: row;
   height: 100%;
   overflow: hidden;
   border: 1px solid #ddd; 

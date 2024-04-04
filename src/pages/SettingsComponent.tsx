@@ -99,8 +99,8 @@ const settingsPanelStyle = {
   };
 
 return (
+<div className = "flex-item">
 
-<>
 
 <SettingsTopBar  />
  
@@ -134,7 +134,8 @@ return (
 
       </Box>
     </Box>
-    </>
+    </div>
+   
   );
 }
 

@@ -313,7 +313,7 @@ const App: React.FC = () => {
    
     <div className={`main-content ${isWatchlistVisible || isAlertsVisible || isHotlistVisible || isCalendarVisible || isNotesVisible || isChatsVisible || isIdeasStreamVisible || isLiveStreamsVisible || isCalculatorVisible ? 'with-panel' : ''}`}>
         
-         <div className = "flex-item">
+      
    
 
         {mainContent === "home" && <HomeComponent />}
@@ -323,8 +323,7 @@ const App: React.FC = () => {
       {mainContent === "bots" && <BotsComponent />}
       {mainContent === "portfolioAnalytics" && <PortfolioAnalyticsComponent />}
       {mainContent === "settings" && <SettingsComponent />}
-   
-</div>
+
 
        {isPanelVisible && ActivePanelComponent && <div className="panel active"><ActivePanelComponent /></div>}
   
