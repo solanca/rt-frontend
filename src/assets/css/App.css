@@ -334,12 +334,13 @@ width: 90% !important;
 .orderWidget {
   display: flex;
   flex-direction: column;
-  width: 310px;
+  width: 380px;
   height: 100%;
   overflow: hidden;
-  border: 1px solid #ddd; 
-  border-radius: 4px; 
-padding: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  backgroundColor: rgba(255, 255, 255, 0.04); 
+  boxShadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+padding: 19px;
 }
 
 
