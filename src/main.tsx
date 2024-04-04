@@ -6,11 +6,9 @@ import { ReactFlowProvider} from '@xyflow/react';
 
 // contexts and global
 import { TradingPairProvider } from './pages/components/TradingPairContext';
-import { DarkModeContext, DarkModeProvider } from './pages/components/DarkModeContext';
-import { usePanelVisibility } from './pages/components/PanelVisibilityContext'; // Update the path as necessary
+import { DarkModeProvider } from './pages/components/DarkModeContext';
 import { PanelVisibilityProvider } from './pages/components/PanelVisibilityContext';
 import { ActivePageProvider } from './pages/components/ActivePageContext';
-import { useActivePage } from './pages/components/ActivePageContext'; // Ensure correct path
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

@@ -14,10 +14,6 @@ import { faHome, faChartLine, faBroadcastTower, faRobot, faComments, faCog } fro
 import { ListItemIcon, Divider } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import HelpIcon from '@mui/icons-material/HelpOutline';
-import SettingsIcon from '@mui/icons-material/Settings';
-import LogoutIcon from '@mui/icons-material/ExitToApp';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LanguageIcon from '@mui/icons-material/Language';
 import HomeIcon from '@mui/icons-material/Home';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
@@ -29,8 +25,7 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp'; // Assuming this is f
 import logo from './assets/logo.svg';
 
 // contexts and global
-import { TradingPairProvider } from './pages/components/TradingPairContext';
-import { DarkModeContext, DarkModeProvider } from './pages/components/DarkModeContext';
+import { DarkModeContext } from './pages/components/DarkModeContext';
 import { usePanelVisibility } from './pages/components/PanelVisibilityContext'; // Update the path as necessary
 import { PanelVisibilityProvider } from './pages/components/PanelVisibilityContext';
 import { ActivePageProvider } from './pages/components/ActivePageContext';
