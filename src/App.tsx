@@ -1,5 +1,5 @@
-import React, { useEffect,useState, useContext } from 'react';
-import { AppBar, Box, Button, CssBaseline, ThemeProvider, Toolbar, Typography, IconButton, createTheme, Tooltip, Menu, MenuItem, Switch } from '@mui/material';
+import React, { useState, useContext } from 'react';
+import { Button, CssBaseline, ThemeProvider, Typography, IconButton, createTheme, Menu, MenuItem, Switch } from '@mui/material';
 
 // css
 import './assets/css/App.css';
@@ -7,10 +7,8 @@ import './assets/css/table-styles.css';
 
 //icons n graphic stuff
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faChartLine, faBroadcastTower, faRobot, faComments, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChartLine, faBroadcastTower, faRobot, faCog } from '@fortawesome/free-solid-svg-icons';
 import { ListItemIcon, Divider } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import HelpIcon from '@mui/icons-material/HelpOutline';
@@ -27,8 +25,6 @@ import logo from './assets/logo.svg';
 // contexts and global
 import { DarkModeContext } from './pages/components/DarkModeContext';
 import { usePanelVisibility } from './pages/components/PanelVisibilityContext'; // Update the path as necessary
-import { PanelVisibilityProvider } from './pages/components/PanelVisibilityContext';
-import { ActivePageProvider } from './pages/components/ActivePageContext';
 import { useActivePage } from './pages/components/ActivePageContext'; // Ensure correct path
 
 // main control left bar
