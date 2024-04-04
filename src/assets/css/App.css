@@ -331,17 +331,105 @@ width: 90% !important;
 
 }
 
+
+/* ORDER BOOK STUFF ********************************************/ 
+
 .orderWidget {
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 25%;
   height: 100%;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12); 
-  backgroundColor: rgba(255, 255, 255, 0.04); 
-  boxShadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+  background-Color: rgba(255, 255, 255, 0.04); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 padding: 19px;
 }
+
+.order-widget-content .MuiTypography-root, 
+.order-widget-content .MuiInputBase-input, 
+.order-widget-content .MuiInputLabel-root, 
+.order-widget-content .MuiFormControlLabel-label {
+  font-size: 0.875rem; /* Adjust the font size as needed */
+
+}
+
+.MuiInputBase-root {
+
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.order-widget-content .MuiInputBase-root {
+  height: 32px; /* Adjust the height of input fields */
+}
+
+.order-widget-content .MuiSwitch-root {
+  height: 20px; /* Adjust the height of switches */
+}
+
+.custom-text-field {
+   margin:0;
+}
+
+.custom-text-field .MuiInputBase-root {
+  height: 32px; /* Reduced height */
+  font-size: 0.875rem; /* Reduced font size */
+}
+
+.custom-text-field .MuiInputBase-root input {
+  padding: 6px 12px; /* Adjust padding to align text vertically */
+}
+
+.custom-text-field .MuiInputLabel-root {
+  font-size: 0.875rem; /* Reduced label font size */
+  line-height: 0.8rem; /* Adjust if necessary to align the label */
+  top: 0px; /* Adjust if necessary to align the label */
+  left: 8px; /* Adjust if necessary for horizontal alignment */
+  
+}
+
+.custom-text-field .MuiInputLabel-shrink {
+  transform: translate(0, 1.5px) scale(0.75); /* Adjust label position when focused */
+}
+
+
+.order-container {
+  display: flex;
+  width: 100%; /* Full width of the parent element */
+  align-items: center;
+  flex-wrap: nowrap; /* Prevents the items from wrapping onto the next line */
+
+}
+
+.percentage-box {
+  flex: 0 0 auto; /* Don't grow, don't shrink, and based on width */
+  width: 40px; /* Fixed width for the percentage box */
+  height: 20px; /* Fixed width for the percentage box */
+  padding: 2px;
+  border: 1px solid ;
+  text-align: center;
+  font-size: 10px; /* Smaller font size */
+  margin-right: 5px; /* Margin to separate from the buttons */
+
+}
+
+.order-button {
+  flex: 1; /* Grow to fill the container */
+  padding: 2px 5px;
+  font-size: 12px; /* Smaller font size */
+  border-radius: 1px;
+  margin-right: 2px;
+}
+
+/* you can use the following selector to remove margin from the last button. */
+.order-button:last-child {
+  margin-right: 2px;
+}
+
+
 
 
   .widget-container { 
