@@ -82,6 +82,7 @@ const FlowComponent = () => {
   );
 
   const colorMode = darkMode ? "dark" : "light";
+  console.log('node==',nodes);
 
   return (
     <>
