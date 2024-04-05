@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
-
-function TreeViewComponent({ filePath }) {
+type Props = {
+    filePath:string
+}
+function TreeViewComponent({ filePath }:Props) {
     const [content, setContent] = useState('');
 
     useEffect(() => {
