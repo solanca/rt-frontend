@@ -38,13 +38,6 @@ import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows"; // Assuming
 import ExitToAppIcon from "@mui/icons-material/ExitToApp"; // Assuming this is for "Sign out"
 import logo from "../assets/logo.svg";
 
-// contexts and global
-// import { DarkModeContext } from "./pages/components/DarkModeContext";
-// import { usePanelVisibility } from "./pages/components/PanelVisibilityContext"; // Update the path as necessary
-// import { useActivePage } from "./pages/components/ActivePageContext"; // Ensure correct path
-
-// main control left bar
-
 // right bar
 import WatchlistComponent from "../panel/WatchlistComponent";
 import AlertsComponent from "../panel/AlertsComponent";
@@ -91,19 +84,6 @@ const MainLayout: React.FC = () => {
   const navigate = useNavigate();
   const theme = createTheme({ palette: { mode: darkMode ? "dark" : "light" } });
 
-  // States for right sidebar panels
-  // const [isWatchlistVisible, setWatchlistVisible] = useState<boolean>(false);
-  // const [isAlertsVisible, setAlertsVisible] = useState<boolean>(false);
-  // const [isHotlistVisible, setHotlistVisible] = useState<boolean>(false);
-  // const [isCalendarVisible, setCalendarVisible] = useState<boolean>(false);
-  // const [isNotesVisible, setNotesVisible] = useState<boolean>(false);
-  // const [isChatsVisible, setChatsVisible] = useState<boolean>(false);
-  // const [isIdeasStreamVisible, setIdeasStreamVisible] =
-  //   useState<boolean>(false);
-  // const [isLiveStreamsVisible, setLiveStreamsVisible] =
-  //   useState<boolean>(false);
-  // const [isCalculatorVisible, setCalculatorVisible] = useState<boolean>(false);
-
   // State to track the active panel
   const [activePanel, setActivePanel] = useState<PanelType | null>(null);
 
@@ -113,8 +93,6 @@ const MainLayout: React.FC = () => {
 
   // right panel visiblity
   const { isPanelVisible, setPanelVisible } = usePanelVisibility();
-
-  // Function to toggle right panel flip outs panels
 
   // Functions to toggle visibility of right sidebar panels
 
@@ -285,6 +263,9 @@ const MainLayout: React.FC = () => {
           <Button onClick={() => navigate("/bots")}>
             <FontAwesomeIcon icon={faRobot} />
           </Button>
+          <Button onClick={() => navigate("/portfolio")}>
+            <FontAwesomeIcon icon={faChartLine} />
+          </Button>
           <Button onClick={() => navigate("/analytics")}>
             <FontAwesomeIcon icon={faChartLine} />
           </Button>
@@ -295,21 +276,7 @@ const MainLayout: React.FC = () => {
 
         <div className="content-container">
           <div
-            className={"main-content" 
-            // ${
-            //   isWatchlistVisible ||
-            //   isAlertsVisible ||
-            //   isHotlistVisible ||
-            //   isCalendarVisible ||
-            //   isNotesVisible ||
-            //   isChatsVisible ||
-            //   isIdeasStreamVisible ||
-            //   isLiveStreamsVisible ||
-            //   isCalculatorVisible
-            //     ? "with-panel"
-            //     : ""
-            // }`
-          }
+            className={"main-content" }
           >
             <Outlet />
 

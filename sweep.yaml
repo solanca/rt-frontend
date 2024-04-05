@@ -6,6 +6,7 @@ rules:
   - "All new business logic should have corresponding unit tests."
   - "Refactor large functions to be more modular."
   - "Add docstrings to all functions and file headers."
+  - "Any clearly inefficient or repeated code should be optimized or refactored."
 
 # This is the branch that Sweep will develop from and make pull requests to. Most people use 'main' or 'master' but some users also use 'dev' or 'staging'.
 branch: 'main'
@@ -13,12 +14,8 @@ branch: 'main'
 # By default Sweep will read the logs and outputs from your existing Github Actions. To disable this, set this to false.
 gha_enabled: True
 
-# This is the description of your project. It will be used by sweep when creating PRs. You can tell Sweep what's unique about your project, what frameworks you use, or anything else you want.
-#
-# Example:
-#
-# description: sweepai/sweep is a python project. The main api endpoints are in sweepai/api.py. Write code that adheres to PEP8.
-description: ''
+# description: 
+description: 'rt-frontend is a typescript VITE and React project for a trading application. The application includes a trading terminal and a flow component - this is a modular flowchart using a react library called react-flow and will be used to design strategies. In summary, main.tsx boots up the app and mounts the App component. App.tsx sets up routing and global contexts, deciding what content is shown based on the current route. MainLayout.tsx provides the consistent structure and layout for the pages of the app and includes graphics / icons, ensuring that elements like sidebars and navigation bars are consistently presented.'
 
 # This sets whether to create pull requests as drafts. If this is set to True, then all pull requests will be created as drafts and GitHub Actions will not be triggered.
 draft: False

@@ -6,8 +6,12 @@ const HomePage = lazy(() => import("../pages/HomeComponent"));
 const TradeEnginePage = lazy(() => import("../pages/TradeEngineComponent"));
 const FlowPage = lazy(() => import("../pages/FlowComponent"));
 const BotsPage = lazy(() => import("../pages/BotsComponent"));
-const PortfolioAnalyticsPage = lazy(
-  () => import("../pages/PortfolioAnalyticsComponent")
+
+const PortfolioPage = lazy(
+  () => import("../pages/PortfolioComponent")
+);
+const AnalyticsPage = lazy(
+  () => import("../pages/AnalyticsComponent")
 );
 const SettingsPage = lazy(() => import("../pages/SettingsComponent"));
 export const router = createBrowserRouter([
@@ -33,8 +37,12 @@ export const router = createBrowserRouter([
         element: <BotsPage />,
       },
       {
+        path: "/portfolio",
+        element: <PortfolioPage />,
+      },
+      {
         path: "/analytics",
-        element: <PortfolioAnalyticsPage />,
+        element: <AnalyticsPage />,
       },
       {
         path: "/settings",
