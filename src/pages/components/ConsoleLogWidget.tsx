@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const ConsoleLogWidget = () => {
-  const [logs, setLogs] = useState([]);
+  const [logs, setLogs] = useState<{type:string,message:string}[]>([]);
 
   useEffect(() => {
     const originalConsoleLog = console.log;
