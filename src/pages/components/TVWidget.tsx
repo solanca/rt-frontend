@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { useTradingPair } from './TradingPairContext';
+import React from 'react';
 import { DarkModeContext } from './DarkModeContext'; // Import the DarkModeContext
 
 export default class Tabsshow extends React.PureComponent {
-    constructor(props) {
+    private _ref: React.RefObject<any>;
+    constructor(props: {}) {
         super(props);
         this._ref = React.createRef();
     }
@@ -14,7 +14,7 @@ export default class Tabsshow extends React.PureComponent {
         script.async = true;
 
         // Retrieve dark mode context value
-        const darkModeContext = this.context;
+        const darkModeContext:any = this.context;
 
         const widgetConfig = {
            "autosize": true,
@@ -58,14 +58,14 @@ export default class Tabsshow extends React.PureComponent {
     render() {
         return (
             <DarkModeContext.Consumer>
-                {darkModeContext => (
+                {_darkModeContext => (
                     <div className="tradingview-widget-container" ref={this._ref}>
                         <div className="tradingview-widget-container__widget"></div>
                         <div className="tradingview-widget-copyright">
                             {/* ... Your copyright content ... */}
                         </div>
                     </div>
-                )}
+              )} 
             </DarkModeContext.Consumer>
         );
     }
