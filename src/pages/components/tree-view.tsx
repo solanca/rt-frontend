@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
-
-function TreeViewComponent({ filePath }) {
+import { HTTP_URL } from '../../config/constant';
+type Props = {
+    filePath:string
+}
+function TreeViewComponent({ filePath }:Props) {
     const [content, setContent] = useState('');
 
     useEffect(() => {
@@ -16,7 +19,7 @@ function TreeViewComponent({ filePath }) {
             }
 
             try {
-                const response = await fetch(`http://localhost:8080/api/get_file/${encodeURIComponent(adjustedFilePath)}`);
+                const response = await fetch(`${HTTP_URL}/get_file/${encodeURIComponent(adjustedFilePath)}`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch file content: ${response.status}`);
                 }

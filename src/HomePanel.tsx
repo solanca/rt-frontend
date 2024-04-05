@@ -13,11 +13,14 @@ import {
   faBroadcastTower,
   faCalculator,
 } from '@fortawesome/free-solid-svg-icons';
-
-const HomePanel = ({ setActivePanel }) => {
+import { PanelType } from './types';
+type Props = {
+  setActivePanel:React.Dispatch<React.SetStateAction<PanelType|null>>
+}
+const HomePanel = ({ setActivePanel }:Props) => {
   // Function to toggle panels
-  const togglePanel = (panel) => {
-    setActivePanel(currentPanel => currentPanel === panel ? null : panel);
+  const togglePanel = (panel:PanelType) => {
+    setActivePanel((currentPanel:PanelType|null) => currentPanel === panel ? null : panel);
   };
 
   return (

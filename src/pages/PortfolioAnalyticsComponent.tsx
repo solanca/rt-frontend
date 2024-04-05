@@ -1,19 +1,12 @@
-import DefaultTopBar from './topbars/DefaultTopBar';
-
+import DefaultTopBar from "./topbars/DefaultTopBar";
 
 function PortfolioAnalyticsComponent() {
   return (
+    <div className="flex-item">
+      <DefaultTopBar />
 
-  
-  
-<div className = "flex-item">
-
-<DefaultTopBar  />
-
-
-  <div>This is the PortfolioAnalyticsComponent</div>
-  
-</div>
+      <div>This is the PortfolioAnalyticsComponent</div>
+    </div>
   );
 }
 

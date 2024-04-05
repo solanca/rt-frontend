@@ -1,10 +1,8 @@
-import React from 'react';
-import { MarkerType, Position } from '@xyflow/react';
-import TurboNode, { TurboNodeData } from './TurboNode';
-import TurboEdge from './TurboEdge';
+import { Edge, Node, Position } from '@xyflow/react';
+import { TurboNodeData } from './TurboNode';
 import FunctionIcon from './FunctionIcon';
 import IndicatorIcon from './IndicatorIcon';
-import { FiCloud, FiFile } from 'react-icons/fi';
+import { FiFile } from 'react-icons/fi';
 
 export const nodeDefaults = {
   sourcePosition: Position.Bottom,
@@ -39,7 +37,7 @@ export const nodes: Node<TurboNodeData>[] = [
   {
      id: '5',
   position: { x: 500, y: 125 },
-  data: { icon: <IndicatorIcon /> ,title: 'RSI', subline: '7 Day',markerEnd: 'none'},
+  data: { icon: <IndicatorIcon /> ,title: 'RSI', subline: '7 Day'},
   type: 'turbo',
     sourcePosition: Position.Bottom,
   targetPosition: Position.Top,

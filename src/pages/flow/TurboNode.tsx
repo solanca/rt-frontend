@@ -1,6 +1,5 @@
-import React, { memo, ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import { Handle, NodeProps, Position } from '@xyflow/react';
-import { FiCloud } from 'react-icons/fi';
 
 export type TurboNodeData = {
   title: string;
@@ -8,7 +7,7 @@ export type TurboNodeData = {
   subline?: string;
 };
 
-export default memo(({ data }: NodeProps<TurboNodeData>) => {
+export default memo(( data : any) => {
   return (
     <>
    

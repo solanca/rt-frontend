@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, ToggleButtonGroup, ToggleButton, Select, MenuItem, FormControl, InputLabel, Box } from '@mui/material';
+import { TextField, ToggleButtonGroup, ToggleButton, Select, MenuItem, FormControl, InputLabel, Box, SelectChangeEvent } from '@mui/material';
 
 function StopLossSection() {
   const [stopLossType, setStopLossType] = useState('market');
@@ -16,11 +16,11 @@ function StopLossSection() {
     }
   };
 
-  const handleProtectionChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleProtectionChange = (event: SelectChangeEvent<string>) => {
     setProtection(event.target.value as string);
   };
 
-  const handleRiskChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleRiskChange = (event: SelectChangeEvent<string>) => {
     setRisk(event.target.value as string);
   };
 

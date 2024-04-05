@@ -57,10 +57,10 @@ import LiveStreamsComponent from "../panel/LiveStreamsComponent";
 import CalculatorComponent from "../panel/CalculatorComponent";
 
 import HomePanel from "../HomePanel";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { DarkModeContext } from "../pages/components/DarkModeContext";
-import { useActivePage } from "../pages/components/ActivePageContext";
 import { usePanelVisibility } from "../pages/components/PanelVisibilityContext";
+import { PanelType } from "../types";
 
 interface PanelComponents {
   watchlist: React.ComponentType;
@@ -91,46 +91,34 @@ const MainLayout: React.FC = () => {
   const navigate = useNavigate();
   const theme = createTheme({ palette: { mode: darkMode ? "dark" : "light" } });
 
-
   // States for right sidebar panels
-  const [isWatchlistVisible, setWatchlistVisible] = useState<boolean>(false);
-  const [isAlertsVisible, setAlertsVisible] = useState<boolean>(false);
-  const [isHotlistVisible, setHotlistVisible] = useState<boolean>(false);
-  const [isCalendarVisible, setCalendarVisible] = useState<boolean>(false);
-  const [isNotesVisible, setNotesVisible] = useState<boolean>(false);
-  const [isChatsVisible, setChatsVisible] = useState<boolean>(false);
-  const [isIdeasStreamVisible, setIdeasStreamVisible] =
-    useState<boolean>(false);
-  const [isLiveStreamsVisible, setLiveStreamsVisible] =
-    useState<boolean>(false);
-  const [isCalculatorVisible, setCalculatorVisible] = useState<boolean>(false);
-
-  // State for main content area (set by left bar menu)
-  const [mainContent, setMainContent] = useState<string>("home"); // default to "home"
-
-
+  // const [isWatchlistVisible, setWatchlistVisible] = useState<boolean>(false);
+  // const [isAlertsVisible, setAlertsVisible] = useState<boolean>(false);
+  // const [isHotlistVisible, setHotlistVisible] = useState<boolean>(false);
+  // const [isCalendarVisible, setCalendarVisible] = useState<boolean>(false);
+  // const [isNotesVisible, setNotesVisible] = useState<boolean>(false);
+  // const [isChatsVisible, setChatsVisible] = useState<boolean>(false);
+  // const [isIdeasStreamVisible, setIdeasStreamVisible] =
+  //   useState<boolean>(false);
+  // const [isLiveStreamsVisible, setLiveStreamsVisible] =
+  //   useState<boolean>(false);
+  // const [isCalculatorVisible, setCalculatorVisible] = useState<boolean>(false);
 
   // State to track the active panel
-  const [activePanel, setActivePanel] = useState<string | null>(null);
+  const [activePanel, setActivePanel] = useState<PanelType | null>(null);
 
   // which panel component to switch to
- 
 
-      const ActivePanelComponent = panelComponents[activePanel];
-
+  const ActivePanelComponent = activePanel ? panelComponents[activePanel] : null;
 
   // right panel visiblity
   const { isPanelVisible, setPanelVisible } = usePanelVisibility();
 
   // Function to toggle right panel flip outs panels
-  
-
- 
 
   // Functions to toggle visibility of right sidebar panels
 
   // Function to change main content and update active page in context
- 
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
@@ -300,28 +288,28 @@ const MainLayout: React.FC = () => {
           <Button onClick={() => navigate("/analytics")}>
             <FontAwesomeIcon icon={faChartLine} />
           </Button>
-          <Button
-           onClick={() => navigate("/settings")}
-          >
+          <Button onClick={() => navigate("/settings")}>
             <FontAwesomeIcon icon={faCog} />
           </Button>
         </div>
 
         <div className="content-container">
           <div
-            className={`main-content ${
-              isWatchlistVisible ||
-              isAlertsVisible ||
-              isHotlistVisible ||
-              isCalendarVisible ||
-              isNotesVisible ||
-              isChatsVisible ||
-              isIdeasStreamVisible ||
-              isLiveStreamsVisible ||
-              isCalculatorVisible
-                ? "with-panel"
-                : ""
-            }`}
+            className={"main-content" 
+            // ${
+            //   isWatchlistVisible ||
+            //   isAlertsVisible ||
+            //   isHotlistVisible ||
+            //   isCalendarVisible ||
+            //   isNotesVisible ||
+            //   isChatsVisible ||
+            //   isIdeasStreamVisible ||
+            //   isLiveStreamsVisible ||
+            //   isCalculatorVisible
+            //     ? "with-panel"
+            //     : ""
+            // }`
+          }
           >
             <Outlet />
 
