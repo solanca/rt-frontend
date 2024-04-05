@@ -1,4 +1,4 @@
-// HomePanel.js
+// RightPanel.js
 import React from 'react';
 import { Tooltip, IconButton } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,7 +17,7 @@ import { PanelType } from './types';
 type Props = {
   setActivePanel:React.Dispatch<React.SetStateAction<PanelType|null>>
 }
-const HomePanel = ({ setActivePanel }:Props) => {
+const RightPanel = ({ setActivePanel }:Props) => {
   // Function to toggle panels
   const togglePanel = (panel:PanelType) => {
     setActivePanel((currentPanel:PanelType|null) => currentPanel === panel ? null : panel);
@@ -74,4 +74,4 @@ const HomePanel = ({ setActivePanel }:Props) => {
   );
 };
 
-export default HomePanel;
+export default RightPanel;

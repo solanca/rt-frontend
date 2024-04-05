@@ -7,6 +7,7 @@ type PanelVisibilityContextType = {
 
 const PanelVisibilityContext = createContext<PanelVisibilityContextType | undefined>(undefined);
 
+
 export const usePanelVisibility = () => {
   const context = useContext(PanelVisibilityContext);
   if (!context) {
@@ -22,6 +23,7 @@ type PanelVisibilityProviderProps = {
 export const PanelVisibilityProvider: React.FC<PanelVisibilityProviderProps> = ({ children }) => {
   const [isPanelVisible, setPanelVisible] = useState<boolean>(false);
 
+  
   return (
     <PanelVisibilityContext.Provider value={{ isPanelVisible, setPanelVisible }}>
       {children}

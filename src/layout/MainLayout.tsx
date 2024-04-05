@@ -25,18 +25,7 @@ import {
   faRobot,
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
-import { ListItemIcon, Divider } from "@mui/material";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import HelpIcon from "@mui/icons-material/HelpOutline";
-import HomeIcon from "@mui/icons-material/Home";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import NewReleasesIcon from "@mui/icons-material/NewReleases";
-import BrushIcon from "@mui/icons-material/Brush"; // Assuming this is for "Drawings panel"
-import GTranslateIcon from "@mui/icons-material/GTranslate"; // Assuming this is for "Language"
-import KeyboardIcon from "@mui/icons-material/Keyboard"; // Assuming this is for "Keyboard shortcuts"
-import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows"; // Assuming this is for "Get desktop app"
-import ExitToAppIcon from "@mui/icons-material/ExitToApp"; // Assuming this is for "Sign out"
-import logo from "../assets/logo.svg";
+
 
 // right bar
 import WatchlistComponent from "../panel/WatchlistComponent";
@@ -49,7 +38,9 @@ import IdeasStreamComponent from "../panel/IdeasStreamComponent";
 import LiveStreamsComponent from "../panel/LiveStreamsComponent";
 import CalculatorComponent from "../panel/CalculatorComponent";
 
-import HomePanel from "../HomePanel";
+import RightPanel from "../RightPanel";
+import UserAccountMenu from "../UserAccountMenu";
+
 import { Outlet, useNavigate } from "react-router-dom";
 import { DarkModeContext } from "../pages/components/DarkModeContext";
 import { usePanelVisibility } from "../pages/components/PanelVisibilityContext";
@@ -88,168 +79,22 @@ const MainLayout: React.FC = () => {
   const [activePanel, setActivePanel] = useState<PanelType | null>(null);
 
   // which panel component to switch to
-
   const ActivePanelComponent = activePanel ? panelComponents[activePanel] : null;
 
   // right panel visiblity
   const { isPanelVisible, setPanelVisible } = usePanelVisibility();
 
-  // Functions to toggle visibility of right sidebar panels
-
-  // Function to change main content and update active page in context
-
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-
-  const isMenuOpen = Boolean(anchorEl);
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleThemeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    event.stopPropagation(); // Prevents the menu from closing
-    toggleDarkMode();
-  };
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: -5, horizontal: 10 }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem>
-        <Typography variant="subtitle1" sx={{ my: 1, fontSize: "0.8rem" }}>
-          Flow
-        </Typography>
-      </MenuItem>
-      <Divider />
-      {/* User Info */}
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <AccountCircle />
-        </ListItemIcon>
-        <Typography>UserAccountBlah</Typography>
-      </MenuItem>
-      <Divider />
-      {/* Menu Items */}
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <Typography>Home</Typography>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <HelpIcon />
-        </ListItemIcon>
-        <Typography>Help Center</Typography>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <NotificationsIcon />
-        </ListItemIcon>
-        <Typography>Notifications</Typography>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <NewReleasesIcon />
-        </ListItemIcon>
-        <Typography>What's new</Typography>
-      </MenuItem>
-      <Divider />
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <DarkModeIcon />
-        </ListItemIcon>
-        <Typography>Dark mode</Typography>
-        <Switch
-          checked={darkMode}
-          onChange={handleThemeChange}
-          onClick={(e) => e.stopPropagation()}
-        />
-      </MenuItem>
-      <MenuItem>
-        <ListItemIcon>
-          <BrushIcon />
-        </ListItemIcon>
-        <Typography>Right panel</Typography>
-        {/* Non-functional fake switch */}
-        <Switch
-          checked={isPanelVisible}
-          onChange={() => setPanelVisible(!isPanelVisible)}
-          onClick={(e) => e.stopPropagation()} // Stop the menu from closing on toggle
-        />
-      </MenuItem>{" "}
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <BrushIcon />
-        </ListItemIcon>
-        <Typography>Another panel</Typography>
-      </MenuItem>
-      <Divider />
-      {/* ... add other menu items with icons ... */}
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <GTranslateIcon />
-        </ListItemIcon>
-        <Typography>Language</Typography>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <KeyboardIcon />
-        </ListItemIcon>
-        <Typography>Keyboard shortcuts</Typography>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <DesktopWindowsIcon />
-        </ListItemIcon>
-        <Typography>Get desktop app</Typography>
-      </MenuItem>
-      <Divider />
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <ExitToAppIcon />
-        </ListItemIcon>
-        <Typography>Sign out</Typography>
-      </MenuItem>
-    </Menu>
-  );
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
       <div
         className="main-container"
         style={{ display: "flex", flexDirection: "row" }}
       >
         <div className="left-sidebar">
-          <div
-            className="userAccountMenu"
-            style={{ width: "10px", flexDirection: "column" }}
-          >
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <img src={logo} className="App-logo" alt="logo" />
-            </IconButton>
-            {renderMenu}
-          </div>
+    
+            <UserAccountMenu />
+      
 
           <Button onClick={() => navigate("/")}>
             <FontAwesomeIcon icon={faHome} />
@@ -286,7 +131,7 @@ const MainLayout: React.FC = () => {
               </div>
             )}
           </div>
-          {isPanelVisible && <HomePanel setActivePanel={setActivePanel} />}
+          {isPanelVisible && <RightPanel setActivePanel={setActivePanel} />}
         </div>
       </div>
     </ThemeProvider>
