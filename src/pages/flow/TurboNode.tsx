@@ -7,7 +7,7 @@ export type TurboNodeData = {
   subline?: string;
 };
 
-export default memo(( data : any) => {
+export default memo(( {data} : any) => {
   return (
     <>
    
