@@ -9,8 +9,8 @@ const WebsocketSettings = () => {
   const connect = () => {
     disconnect(); // Ensure we're not connected already
 
-    const proto = window.location.protocol.startsWith('https') ? 'wss' : 'ws';
-    const wsUri = `${proto}://localhost:8080/ws`;
+    // const proto = window.location.protocol.startsWith('https') ? 'wss' : 'ws';
+    const wsUri = import.meta.env.VITE_WS_SERVER_URL;
     const newSocket = new WebSocket(wsUri);
 
     newSocket.onopen = () => {

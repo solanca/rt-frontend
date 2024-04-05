@@ -76,7 +76,7 @@ const FlowComponent = () => {
         data: { label: `${type} node` },
       };
 
-      setNodes((nds) => nds.concat(newNode));
+      setNodes((nds) => nds.concat(newNode as any));
     },
     [reactFlowInstance, setNodes]
   );

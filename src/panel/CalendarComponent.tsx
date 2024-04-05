@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { LegacyRef } from 'react';
 
 export default  class Tabsshow extends React.PureComponent {
+    _ref: LegacyRef<HTMLDivElement>;
     constructor(props) {
         super(props);
-        this._ref = React.createRef();
+        this._ref = React.createRef() as LegacyRef<HTMLDivElement>;
     }
 
     componentDidMount() {
@@ -22,7 +23,7 @@ export default  class Tabsshow extends React.PureComponent {
           "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
         };
         script.innerHTML = JSON.stringify(widgetConfig);
-
+        //@ts-ignore
         this._ref.current.appendChild(script);
     }
 

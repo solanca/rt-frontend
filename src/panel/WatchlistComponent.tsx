@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { LegacyRef } from 'react';
 
 export default class WatchlistComponent extends React.PureComponent {
+  _ref: LegacyRef<HTMLDivElement>;
+
   constructor(props) {
     super(props);
     this._ref = React.createRef();
@@ -22,6 +24,7 @@ export default class WatchlistComponent extends React.PureComponent {
   };
 
   script.innerHTML = JSON.stringify(widgetConfig); 
+  //@ts-ignore
   this._ref.current.appendChild(script); 
   } 
 

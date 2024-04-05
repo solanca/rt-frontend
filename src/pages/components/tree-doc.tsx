@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Treebeard, decorators } from 'react-treebeard';
 import TreedefaultProps from './tree-theme';
+import { HTTP_URL } from '../../config/constant';
 
 
 Treebeard.defaultProps = TreedefaultProps;
@@ -44,7 +45,7 @@ function TreeDocComponent({ onFileSelect }:Props) {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch('http://localhost:8080/api/get_docs');
+                const response = await fetch(`${HTTP_URL}/get_docs`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
