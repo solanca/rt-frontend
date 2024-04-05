@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, Tab, Tabs, TextField, Slider, FormGroup, FormControlLabel, Switch, Collapse, IconButton,Tooltip } from '@mui/material';
-
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import StopLossSection from './OrderWidget-stoploss';
+import TakeProfitSection from './OrderWidget-takeprofit';
+import ExpireCloseSection from './OrderWidget-expireclose';
 
 function OrderWidget() {
   const [mainTabValue, setMainTabValue] = useState('buy');
@@ -15,6 +18,9 @@ function OrderWidget() {
   const [timeBasedClose, setTimeBasedClose] = useState('');
   const [takeProfitValue, setTakeProfitValue] = useState(''); // State to hold the take profit value
   const [percentage, setPercentage] = useState('0%');
+  const [additionalSectionVisible, setAdditionalSectionVisible] = useState(false); // State to manage the visibility of additional section
+  const [ExpireClose, setExpireClose] = useState(false);
+
 
   const handleMainTabChange = (event, newValue) => {
     setMainTabValue(newValue);
@@ -26,20 +32,30 @@ function OrderWidget() {
 
   const percentages = ['5%', '10%', '15%', '25%', '50%', '100%'];
 
+  
+
+
   return (
-    <div className='orderWidget'>
+<>
+    <div className="orderWidget">
     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-      <Tabs value={mainTabValue} onChange={handleMainTabChange} aria-label="Buy/Sell tabs" variant="fullWidth">
-        <Tab 
-          label={<Typography style={{ width: '100%', backgroundColor: mainTabValue === 'buy' ? 'rgba(0, 128, 0, 0.3)' : undefined }}>Buy</Typography>} 
-          value="buy" 
-        />
-        <Tab 
-          label={<Typography style={{ width: '100%', backgroundColor: mainTabValue === 'sell' ? 'rgba(255, 0, 0, 0.3)' : undefined }}>Sell</Typography>} 
-          value="sell" 
-        />
-      </Tabs>
-    </Box>
+  <Tabs value={mainTabValue} onChange={handleMainTabChange} aria-label="Buy/Sell tabs" variant="fullWidth">
+    <Tab 
+      label={<Typography style={{ width: '100%', backgroundColor: mainTabValue === 'buy' ? 'rgba(0, 128, 0, 0.9)' : 'rgba(0, 128, 0, 0.1)' }}>Buy</Typography>} 
+      value="buy"
+      style={{ backgroundColor: mainTabValue === 'buy' ? 'rgba(0, 128, 0, 0.3)' : 'rgba(0, 128, 0, 0.1)' }} 
+    />
+    <Tab 
+      label={<Typography style={{ width: '100%', backgroundColor: mainTabValue === 'sell' ? 'rgba(255, 0, 0, 0.9)' : 'rgba(255, 0, 0, 0.1)' }}>Sell</Typography>} 
+      value="sell"
+      style={{ backgroundColor: mainTabValue === 'sell' ? 'rgba(255, 0, 0, 0.3)' : 'rgba(255, 0, 0, 0.1)' }} 
+    />
+  </Tabs>
+</Box>
+
+
+
+
 
     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
     <Tabs value={orderType} onChange={handleOrderTypeChange} aria-label="Order type tabs" variant="fullWidth">
@@ -63,11 +79,17 @@ function OrderWidget() {
           value="OCO" 
           sx={{ minWidth: 50 }}
         />
+        <Tooltip title="Presets" placement="top">
+      <IconButton>
+        <AutoAwesomeIcon />
+      </IconButton>
+    </Tooltip>
+
       </Tabs>
 
     </Box>
 
-    <div className='order-widget-content'>
+    <div className="order-widget-content">
       <TextField 
         className="custom-text-field"
         fullWidth 
@@ -127,45 +149,42 @@ function OrderWidget() {
           control={<Switch checked={takeProfit} onChange={(e) => setTakeProfit(e.target.checked)} size="small" />}
           label="Take profit"
         />
-        <Collapse in={takeProfit}>
-          <TextField
-            className="custom-text-field"
-            fullWidth
-            value={takeProfitValue}
-            onChange={(e) => setTakeProfitValue(e.target.value)}
-            label="Take Profit Value"
-            variant="outlined"
-          />
-          {/* Additional fields or components can go here */}
-        </Collapse>
-        <FormControlLabel
-          control={<Switch checked={stopLoss} onChange={(e) => setStopLoss(e.target.checked)} size="small" />}
-          label="Stop loss"
-        />
+        
+        {takeProfit && <TakeProfitSection />}
+       
+        
       </FormGroup>
 
-      <TextField 
-        className="custom-text-field"
-        fullWidth 
-        value={expirePosition} 
-        onChange={(e) => setExpirePosition(e.target.value)} 
-        label="Expire position at" 
-        variant="outlined"
-      />
-      <TextField 
-        className="custom-text-field"
-        fullWidth 
-        value={timeBasedClose} 
-        onChange={(e) => setTimeBasedClose(e.target.value)} 
-        label="Time-Based auto close" 
-        variant="outlined"
-      />
+
+      <FormGroup>
+          <FormControlLabel
+            control={<Switch checked={stopLoss} onChange={(e) => setStopLoss(e.target.checked)} size="small" />}
+            label="Stop loss"
+          />
+          {stopLoss && <StopLossSection />}
+        </FormGroup>
+
+<div>
+
+  <FormGroup>
+        <FormControlLabel
+          control={<Switch checked={ExpireClose} onChange={(e) => setExpireClose(e.target.checked)} size="small" />}
+          label="Expiration / Auto Close"
+        />
+        
+        {ExpireClose && <ExpireCloseSection />}
+       
+        
+      </FormGroup>
+</div>
+
 
       <Button variant="contained" color={mainTabValue === 'buy' ? "success" : "error"} fullWidth>
         {mainTabValue === 'buy' ? 'Buy' : 'Sell'}
       </Button>
     </div>
   </div>
+  </>
 );
 
 }

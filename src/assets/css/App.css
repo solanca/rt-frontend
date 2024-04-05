@@ -87,7 +87,7 @@ height:29px !important ;
 display: flex ;
 margin-top: 4px !important;
 margin-right: 38px !important;
- flexDirection: row ;
+flex-direction: row ;
 padding: 3;
 overflow: hidden;
 background: rgba(0,0,0,0.2);
@@ -163,7 +163,7 @@ margin-right: 0px;
 .App-logo {
   
   height: 22px;
-  wdith: 22px;
+  width: 22px;
   pointer-events: none;
   animation: App-logo-spin infinite 20s linear;
 
@@ -334,12 +334,33 @@ width: 90% !important;
 
 /* ORDER BOOK STUFF ********************************************/ 
 
+
+
+
+.switches {
+  display: flex;
+  flex-direction: column;
+}
+
+.switch {
+  margin-top: 8px;
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+
+.switch label {
+  cursor: pointer;
+}
+
+
 .orderWidget {
   display: flex;
   flex-direction: column;
   width: 25%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.12); 
   background-Color: rgba(255, 255, 255, 0.04); 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
@@ -350,13 +371,11 @@ padding: 19px;
 .order-widget-content .MuiInputBase-input, 
 .order-widget-content .MuiInputLabel-root, 
 .order-widget-content .MuiFormControlLabel-label {
-  font-size: 0.875rem; /* Adjust the font size as needed */
+ font-size: 0.875rem;  /* Adjust the font size as needed */
 
 }
 
 .MuiInputBase-root {
-
-
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -371,7 +390,7 @@ padding: 19px;
 }
 
 .custom-text-field {
-   margin:0;
+   padding:15px;
 }
 
 .custom-text-field .MuiInputBase-root {
@@ -387,7 +406,7 @@ padding: 19px;
   font-size: 0.875rem; /* Reduced label font size */
   line-height: 0.8rem; /* Adjust if necessary to align the label */
   top: 0px; /* Adjust if necessary to align the label */
-  left: 8px; /* Adjust if necessary for horizontal alignment */
+  left: 15px; /* Adjust if necessary for horizontal alignment */
   
 }
 
@@ -429,7 +448,15 @@ padding: 19px;
   margin-right: 2px;
 }
 
-
+/* Override Material-UI ToggleButton styles */
+.order-button.MuiToggleButton-root {
+  flex: 1; /* Grow to fill the container */
+  height: 10px; /* Override default height */
+  width: 150px;
+  margin-top: 10px; /* Override default margin */
+  font-size: 0.875rem; 
+  /* More overrides if needed */
+}
 
 
   .widget-container { 
