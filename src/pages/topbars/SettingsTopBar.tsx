@@ -1,20 +1,19 @@
-import React from 'react';
-import { IconButton, Box } from '@mui/material';
-import SettingsIcon from '@mui/icons-material/Settings';
+import { IconButton } from "@mui/material";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 function SettingsTopBar() {
   return (
     <div className="TopBarPanel">
-   <div className="TopBarContent">
-      <IconButton>
-        <SettingsIcon />
-      </IconButton>
-      {/* Add more icons or components specific to SettingsTopBar */}
-      <>
-      <p>Settings Top Bar Placeholder</p>
-   </>
-       </div>
-</div>
+      <div className="TopBarContent">
+        <IconButton>
+          <SettingsIcon />
+        </IconButton>
+        {/* Add more icons or components specific to SettingsTopBar */}
+        <>
+          <p>Settings Top Bar Placeholder</p>
+        </>
+      </div>
+    </div>
   );
 }
 
