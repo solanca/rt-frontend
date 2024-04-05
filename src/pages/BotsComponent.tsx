@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import DefaultTopBar from './topbars/DefaultTopBar';
 
 function BotsComponent() {
