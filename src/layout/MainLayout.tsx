@@ -17,6 +17,8 @@ import "../assets/css/table-styles.css";
 
 //icons n graphic stuff
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import InsightsIcon from '@mui/icons-material/Insights';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -109,10 +111,10 @@ const MainLayout: React.FC = () => {
             <FontAwesomeIcon icon={faRobot} />
           </Button>
           <Button onClick={() => navigate("/portfolio")}>
-            <FontAwesomeIcon icon={faChartLine} />
+            <AccountBalanceIcon className="small-icon" />
           </Button>
           <Button onClick={() => navigate("/analytics")}>
-            <FontAwesomeIcon icon={faChartLine} />
+          <InsightsIcon className="small-icon" />
           </Button>
           <Button onClick={() => navigate("/settings")}>
             <FontAwesomeIcon icon={faCog} />

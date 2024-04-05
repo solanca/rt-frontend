@@ -168,13 +168,16 @@ margin-right: 0px;
   animation: App-logo-spin infinite 20s linear;
 
 }
-MuiButtonBase-root {
- height: 22px;
-  width: 22px;
+
+.MuiButtonBase-root {
+ 
 
 
 }
 
+.small-icon {
+  font-size: 18px !important;
+}
 
 
 .userAccountMenu {
@@ -327,7 +330,7 @@ overflow:hidden;
 
 .tradingview-widget-container {
   
-width: 90% !important;
+
 
 }
 
