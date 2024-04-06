@@ -1,9 +1,15 @@
 .small-icon {
-    font-size: 18px !important;
-    color: #90caf9;
-    fill: #90caf9;
-  }
   
+   
+  }
+
+
+.left-sidebar svg {
+    fill: #90caf9;
+   /* fill: #1976d2;*/
+    /*fill: #rgb(25, 118, 210);*/
+      width: 18px !important;
+}
 
 .left-sidebar, .right-sidebar {
     flex-shrink: 0;  /* Prevents the panel from shrinking */

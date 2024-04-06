@@ -23,7 +23,9 @@ import "../assets/css/right-panel.css";
 import "../assets/css/react-flow.css";
 
 
-import {FlowSchemaIcon} from "../assets/icons/schema.tsx";
+import {FlowSchemaIcon} from "../assets/icons/left-menu/schema.tsx";
+import {PortfolioIcon} from "../assets/icons/left-menu/portfolio.tsx";
+import {AnalyticsIcon} from "../assets/icons/left-menu/analytics.tsx";
 
 
 //icons n graphic stuff
@@ -103,10 +105,7 @@ const MainLayout: React.FC = () => {
         style={{ display: "flex", flexDirection: "row" }}
       >
         <div className="left-sidebar">
-    
             <UserAccountMenu />
-      
-
           <Button onClick={() => navigate("/")}>
             <FontAwesomeIcon icon={faHome} />
           </Button>
@@ -115,17 +114,15 @@ const MainLayout: React.FC = () => {
           </Button>
           <Button onClick={() => navigate("/flow")}>
           <FlowSchemaIcon className="small-icon"/>
-
-          
           </Button>
           <Button onClick={() => navigate("/bots")}>
             <FontAwesomeIcon icon={faRobot} />
           </Button>
           <Button onClick={() => navigate("/portfolio")}>
-           
+          <PortfolioIcon className="small-icon"/>
           </Button>
-          <Button onClick={() => navigate("/analytics")}>
-     
+          <Button onClick={() => navigate("/analytics")}>     
+          <AnalyticsIcon className="small-icon"/>
           </Button>
           <Button onClick={() => navigate("/settings")}>
             <FontAwesomeIcon icon={faCog} />
