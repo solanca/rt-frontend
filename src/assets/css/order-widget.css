@@ -1,5 +1,42 @@
 
 /* ORDER BOOK ****************************************/ 
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Active states with moving gradients */
+.tabBuyActive, .tabLabelBuyActive {
+  background: linear-gradient(to right, rgba(0, 128, 0, 0.3), rgba(0, 255, 0, 0.3));
+  animation: gradientMove 3s ease infinite;
+  background-size: 150% 150%;
+  
+}
+
+/* Subtle inactive states */
+.tabBuyInactive, .tabLabelBuyInactive {
+  background: linear-gradient(to right, rgba(0, 128, 0, 0.2), rgba(0, 255, 0, 0.2));
+}
+
+/* Active states with moving gradients */
+.tabSellActive, .tabLabelSellActive {
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(255, 100, 0, 0.3));
+  animation: gradientMove 3s ease infinite;
+  background-size: 150% 150%;
+}
+
+/* Subtle inactive states */
+.tabSellInactive, .tabLabelSellInactive {
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(255, 100, 0, 0.2));
+}
+.tabsGradientBackground {
+  background: linear-gradient(to right, rgba(0, 128, 0), rgba(255, 0, 0));
+  width: 100%;
+}
 
 
 .switches {

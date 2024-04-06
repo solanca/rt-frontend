@@ -60,11 +60,20 @@ const UserAccountMenu = () => {
       open={Boolean(anchorEl)}
       onClose={handleMenuClose}
     >
-      <MenuItem>
-        <Typography variant="subtitle1" sx={{ my: 1, fontSize: "0.8rem" }}>
-          Flow
-        </Typography>
-      </MenuItem>
+      <div className="app-title">
+      <MenuItem sx={{backgroundColor: 'transparent',
+  '&:hover': {
+    backgroundColor: 'transparent', // Set to 'transparent' or any desired color
+   
+  }
+}}>
+  <Typography variant="subtitle1" sx={{ my: 1, fontSize: "0.8rem" , backgroundColor: 'transparent' }}>
+    
+      Schema: waverider 0.0.1
+  
+  </Typography>
+</MenuItem>
+</div>
       <Divider />
       <MenuItem onClick={handleMenuClose}>
         <ListItemIcon>

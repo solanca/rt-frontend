@@ -49,57 +49,24 @@ function OrderWidget() {
     <>
       <div className="orderWidget">
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs
-            value={mainTabValue}
-            onChange={handleMainTabChange}
-            aria-label="Buy/Sell tabs"
-            variant="fullWidth"
-          >
-            <Tab
-              label={
-                <Typography
-                  style={{
-                    width: "100%",
-                    backgroundColor:
-                      mainTabValue === "buy"
-                        ? "rgba(0, 128, 0, 0.9)"
-                        : "rgba(0, 128, 0, 0.1)",
-                  }}
-                >
-                  Buy
-                </Typography>
-              }
-              value="buy"
-              style={{
-                backgroundColor:
-                  mainTabValue === "buy"
-                    ? "rgba(0, 128, 0, 0.3)"
-                    : "rgba(0, 128, 0, 0.1)",
-              }}
-            />
-            <Tab
-              label={
-                <Typography
-                  style={{
-                    width: "100%",
-                    backgroundColor:
-                      mainTabValue === "sell"
-                        ? "rgba(255, 0, 0, 0.9)"
-                        : "rgba(255, 0, 0, 0.1)",
-                  }}
-                >
-                  Sell
-                </Typography>
-              }
-              value="sell"
-              style={{
-                backgroundColor:
-                  mainTabValue === "sell"
-                    ? "rgba(255, 0, 0, 0.3)"
-                    : "rgba(255, 0, 0, 0.1)",
-              }}
-            />
-          </Tabs>
+        <Tabs
+  value={mainTabValue}
+  onChange={handleMainTabChange}
+  aria-label="Buy/Sell tabs"
+  variant="fullWidth"
+  className="tabsGradientBackground"
+>
+  <Tab
+    label={<Typography>Buy</Typography>}
+    value="buy"
+    className={mainTabValue === "buy" ? "tabBuyActive" : "tabBuyInactive"}
+  />
+  <Tab
+    label={<Typography>Sell</Typography>}
+    value="sell"
+    className={mainTabValue === "sell" ? "tabSellActive" : "tabSellInactive"}
+  />
+</Tabs>
         </Box>
 
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

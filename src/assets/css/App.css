@@ -127,6 +127,14 @@ h1, h2, h3 {
 
 }
 
+
+MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1gxshbt-MuiButtonBase-root-MuiIconButton-root {
+ outline: none !important;
+ border: none !important;
+ box-shadow: none !important;
+
+}
+
 .small-icon {
   font-size: 18px !important;
   color: #90caf9;

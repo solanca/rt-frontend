@@ -19,3 +19,23 @@
     z-index: 1000; /* Ensure the top bar is above other content */
   }
 
+  @keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app-title {
+  padding: 0px;
+  background: linear-gradient(270deg, #003973, #285a89, #003973, #285a89); /* Updated color values */
+  background-size: 400% 400%;
+  color: white;
+  animation: wave 15s ease infinite;
+  border-radius: 0px;
+}
