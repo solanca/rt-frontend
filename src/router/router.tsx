@@ -1,24 +1,18 @@
-import {  lazy } from "react";
 import { Link, createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
+import HomePage from "../pages/HomeComponent";
+import TradeEnginePage from "../pages/TradeEngineComponent";
+import FlowPage from "../pages/FlowComponent";
+import BotsPage from "../pages/BotsComponent";
+import PortfolioPage from "../pages/PortfolioComponent";
+import AnalyticsPage from "../pages/AnalyticsComponent";
+import SettingsPage from "../pages/SettingsComponent";
 
-const HomePage = lazy(() => import("../pages/HomeComponent"));
-const TradeEnginePage = lazy(() => import("../pages/TradeEngineComponent"));
-const FlowPage = lazy(() => import("../pages/FlowComponent"));
-const BotsPage = lazy(() => import("../pages/BotsComponent"));
-
-const PortfolioPage = lazy(
-  () => import("../pages/PortfolioComponent")
-);
-const AnalyticsPage = lazy(
-  () => import("../pages/AnalyticsComponent")
-);
-const SettingsPage = lazy(() => import("../pages/SettingsComponent"));
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement:<div>wrong page <Link to={"/"}>go home</Link></div>,
+    errorElement: <div>wrong page <Link to={"/"}>go home</Link></div>,
     children: [
       {
         index: true,
