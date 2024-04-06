@@ -39,3 +39,9 @@
   animation: wave 15s ease infinite;
   border-radius: 0px;
 }
+
+.MuiBox-root {
+
+
+  width: 100%;
+}

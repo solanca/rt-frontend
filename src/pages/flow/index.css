@@ -170,7 +170,7 @@
   background-color: var(--bg-color);
   color: var(--text-color);
   border: 1px solid #95679e;
-  border-bottom: none;
+  border-bottom: 1px solid #95679e;
 }
 
 .react-flow__controls button:hover {

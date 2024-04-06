@@ -149,6 +149,8 @@ function FlowTopBar({ onBackgroundChange }:Props) {
             <button className="custom-button">Compile</button>
           </Box>
 
+          <Controls position="top-right" />
+          
           {/* Right Controls and Menu */}
           <Box
             sx={{
@@ -157,7 +159,7 @@ function FlowTopBar({ onBackgroundChange }:Props) {
               justifyContent: "flex-end",
             }}
           >
-            <Controls position="top-right" />
+           
 
             <IconButton onClick={handleMenuOpen}>
               <MoreVertIcon />
