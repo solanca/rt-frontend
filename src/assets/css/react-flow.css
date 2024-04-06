@@ -9,4 +9,27 @@
     overflow: hidden;
     background: rgba(0,0,0,0.2);
     }
+    .custom-button {
+        margin-right: 5px;
+        background: linear-gradient(270deg, #1c576d, #666b6d, #636e72); /* Gradient background */
+        background-size: 200% 200%; /* Extend background size for the animation effect */
+        border: none;
+        color: white;
+        padding: 0px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        height: 20px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.5s ease-in-out; /* Smooth transition for background and transform */
+        border-radius: 1px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .custom-button:hover {
+        background-position: right center; /* Change background position on hover */
+        transform: scale(1.05); /* Slightly enlarge button on hover */
+    }
     
