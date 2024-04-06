@@ -19,7 +19,7 @@ import "../assets/css/user-menu.css";
 import "../assets/css/topbar.css";
 
 
-//import { ReactComponent as FlowSchemaIcon } from "../assets/icons/schema_black.svg";
+import {FlowSchemaIcon} from "../assets/icons/schema.tsx";
 
 
 //icons n graphic stuff
@@ -110,8 +110,9 @@ const MainLayout: React.FC = () => {
             <FontAwesomeIcon icon={faChartLine} />
           </Button>
           <Button onClick={() => navigate("/flow")}>
-        
+          <FlowSchemaIcon />
 
+          
           </Button>
           <Button onClick={() => navigate("/bots")}>
             <FontAwesomeIcon icon={faRobot} />
