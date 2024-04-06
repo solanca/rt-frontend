@@ -44,7 +44,7 @@ function DefaultTopBar() {
     setUserMenuAnchorEl(null);
   };
 
-  const icons = [<HomeIcon />, <SettingsIcon />, <NotificationsIcon />]; // Add more icons as needed
+  const icons = [<SettingsIcon />, <NotificationsIcon />]; // Add more icons as needed
 
   return (
     <div className="TopBarPanel">
@@ -54,7 +54,7 @@ function DefaultTopBar() {
             /* Logic to scroll left */
           }}
         >
-          <ArrowBackIosIcon />
+          
         </IconButton>
         {icons.map((Icon, index) => (
           <IconButton key={index} sx={{ margin: "0 4px" }}>
@@ -97,7 +97,7 @@ function DefaultTopBar() {
             /* Logic to scroll right */
           }}
         >
-          <ArrowForwardIosIcon />
+        
         </IconButton>
 
         <Box
