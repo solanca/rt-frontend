@@ -1,0 +1,12 @@
+
+.react-flow__controls {
+    height:29px !important ;
+    display: flex ;
+    margin-top: 4px !important;
+    margin-right: 38px !important;
+    flex-direction: row ;
+    padding: 3;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    }
+    
