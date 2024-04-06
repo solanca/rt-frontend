@@ -121,7 +121,7 @@ function DefaultTopBar() {
             <small style={{ fontSize: "0.45rem", lineHeight: "0" }}>
               Balance: $100
             </small>
-
+            </Box>
             <IconButton
               aria-label="more"
               size="small"
@@ -142,7 +142,7 @@ function DefaultTopBar() {
               <MenuItem onClick={handleUserMenuClose}>Option 2</MenuItem>
               <MenuItem onClick={handleUserMenuClose}>Option 3</MenuItem>
             </Menu>
-          </Box>
+          
         </Box>
       </div>
     </div>

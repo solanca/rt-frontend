@@ -15,7 +15,7 @@
   .TopBarPanel {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: calc(100% - 35px); 
     z-index: 1000; /* Ensure the top bar is above other content */
   }
 

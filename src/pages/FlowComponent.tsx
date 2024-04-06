@@ -19,7 +19,7 @@ import {
 import "./flow/index.css";
 import TurboNode from "./flow/TurboNode";
 import TurboEdge from "./flow/TurboEdge";
-import SignalsTopBar from "./topbars/SignalsTopBar";
+import FlowTopBar from "./topbars/FlowTopBar";
 
 const FlowComponent = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -86,7 +86,7 @@ const FlowComponent = () => {
 
   return (
     <>
-      <SignalsTopBar onBackgroundChange={handleBackgroundChange} />
+      <FlowTopBar onBackgroundChange={handleBackgroundChange} />
 
       <ReactFlow
         nodes={nodes}

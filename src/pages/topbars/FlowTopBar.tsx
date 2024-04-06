@@ -20,7 +20,7 @@ type Props = {
   onBackgroundChange:(newBackground: BackgroundVariant) => void
 }
 
-function SignalsTopBar({ onBackgroundChange }:Props) {
+function FlowTopBar({ onBackgroundChange }:Props) {
   const buttons = [
     {
       name: "Indicator",
@@ -108,7 +108,7 @@ function SignalsTopBar({ onBackgroundChange }:Props) {
   return (
     <div className="TopBarPanel">
       <div className="TopBarContent">
-        <Box sx={{ display: "flex", alignItems: "center", width: "90%" }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           {/* Draggable Nodes */}
           <Box
             sx={{
@@ -267,4 +267,4 @@ function SignalsTopBar({ onBackgroundChange }:Props) {
   );
 }
 
-export default SignalsTopBar;
+export default FlowTopBar;
