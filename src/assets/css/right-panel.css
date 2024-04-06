@@ -1,0 +1,14 @@
+.panel {
+    flex-basis: 450px;
+    flex-shrink: 0;
+     transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .panel.active {
+   display: flex;
+   align-items: flex-end;
+    transform: translateX(0); /* When active, the panel is in its natural position */
+  }
+  

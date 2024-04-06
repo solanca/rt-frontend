@@ -17,6 +17,9 @@ import "../assets/css/table-styles.css";
 import "../assets/css/order-widget.css";
 import "../assets/css/user-menu.css";
 import "../assets/css/topbar.css";
+import "../assets/css/left-menu.css";
+import "../assets/css/trade-terminal-widgets.css";
+import "../assets/css/right-panel.css";
 
 
 import {FlowSchemaIcon} from "../assets/icons/schema.tsx";
@@ -110,7 +113,7 @@ const MainLayout: React.FC = () => {
             <FontAwesomeIcon icon={faChartLine} />
           </Button>
           <Button onClick={() => navigate("/flow")}>
-          <FlowSchemaIcon />
+          <FlowSchemaIcon className="small-icon"/>
 
           
           </Button>

@@ -5,7 +5,7 @@
 
 
 /* GlobalScrollbarStyles.css  */
- {
+* {
   scrollbar-width: thin;
   scrollbar-color: rgba(0,0,0,0.2) rgba(0,0,0,0.1);
 }
@@ -53,10 +53,6 @@
   
 }
 
-.MuiToolbar-regular {
-height: 35px;
- 
-}
 
 
 /*  *****************end MUI */
@@ -65,25 +61,6 @@ height: 35px;
 
 
 
-/*  ****************react flow */
-
-
-
-.react-flow__controls {
-height:29px !important ;
-display: flex ;
-margin-top: 4px !important;
-margin-right: 38px !important;
-flex-direction: row ;
-padding: 3;
-overflow: hidden;
-background: rgba(0,0,0,0.2);
-}
-
-
-
-
-/*  **********************************************************************end flow */
 .App {
  
 }
@@ -119,14 +96,7 @@ h1, h2, h3 {
   width: 100%;
 }
 
-
-
-.MuiButtonBase-root {
- 
-
-
-}
-
+/* non-working attempt to remove the white selection focus border from MUI components */
 
 MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1gxshbt-MuiButtonBase-root-MuiIconButton-root {
  outline: none !important;
@@ -135,16 +105,7 @@ MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-e
 
 }
 
-.small-icon {
-  font-size: 18px !important;
-  color: #90caf9;
-  fill: #90caf9;
-}
 
-
-.App-header {
-
-  }
 
 /* end top bar ***********************************************/ 
 
@@ -191,138 +152,3 @@ width: auto;
 }
 
 
-.left-sidebar, .right-sidebar {
-  flex-shrink: 0;  /* Prevents the panel from shrinking */
-}
-
-.left-sidebar {
-  border-right: 1px solid #444; 
-  max-width:35px;
-  overflow:hidden;
-}
-
-
-.left-info-panel {
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  height: 100vh;
-  width: 80px; 
-
-
-}
-
-.right-sidebar {
-  border-left: 1px solid #444; 
-   width: 48px;  /* Adjust based on your desired width */
-overflow:hidden;
-}
-
-
-
-.left-sidebar button {
-  background-color: transparent;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-left: -15px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.right-sidebar button {
-  background-color: transparent;
-  border: none;
-  margin: 10px 0;
-  padding: 5px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.panel {
-  flex-basis: 450px;
-  flex-shrink: 0;
-   transform: translateX(100%); /* Start off-screen to the right */
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
-  
-
-}
-
-
-
-.panel.active {
- display: flex;
- align-items: flex-end;
-  transform: translateX(0); /* When active, the panel is in its natural position */
-}
-
-
-/* WIDGET CRAP ********************************************/ 
-
-
-.tradingview-widget-container {
-  
-
-}
-
-  .widget-container { 
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid #ddd; 
-  border-radius: 4px; 
-}
-
-.widget-title { 
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;         
-  padding: 8px 12px;
-  background-color: #f5f5f5;      
-  border-bottom: 1px solid #ddd;  
-}
-
-.widget-title h3 { 
-  margin: 0;
-  font-size: 9px;
-  font-weight: 600; 
-}
-
-.widget-buttons { 
-  display: flex;
-}
-
-.widget-button { 
-  width: 24px;
-  height: 24px;
-  border: none;
-  margin-left: 4px; 
-  cursor: pointer;
-  background-color: #eee; 
-}
-
-.widget-content {
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
-.drag-handle {
-  cursor: grab;
-  background-color: #ddd;
-  color: #333;
-  padding: 5px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  user-select: none;
-  z-index: 0;
-}
-
-
-/* WIDGET CRAP ********************************************/ 
