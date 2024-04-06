@@ -1,0 +1,41 @@
+
+.UserMenuPanel {
+    margin-top:0px;
+  margin-right: 0px;
+  }
+  
+
+  .App-logo {
+    height: 22px;
+    width: 22px;
+    pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
+  
+  }
+  
+.userAccountMenu {
+    height: 50px;
+  margin-left: 12px;
+  margin-top: -14px;
+  
+  }
+  
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+
+  

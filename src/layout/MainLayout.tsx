@@ -14,11 +14,16 @@ import {
 // css
 import "../assets/css/App.css";
 import "../assets/css/table-styles.css";
+import "../assets/css/order-widget.css";
+import "../assets/css/user-menu.css";
+import "../assets/css/topbar.css";
+
+
+//import { ReactComponent as FlowSchemaIcon } from "../assets/icons/schema_black.svg";
+
 
 //icons n graphic stuff
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import InsightsIcon from '@mui/icons-material/Insights';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -105,16 +110,17 @@ const MainLayout: React.FC = () => {
             <FontAwesomeIcon icon={faChartLine} />
           </Button>
           <Button onClick={() => navigate("/flow")}>
-            <FontAwesomeIcon icon={faBroadcastTower} />
+        
+
           </Button>
           <Button onClick={() => navigate("/bots")}>
             <FontAwesomeIcon icon={faRobot} />
           </Button>
           <Button onClick={() => navigate("/portfolio")}>
-            <AccountBalanceIcon className="small-icon" />
+           
           </Button>
           <Button onClick={() => navigate("/analytics")}>
-          <InsightsIcon className="small-icon" />
+     
           </Button>
           <Button onClick={() => navigate("/settings")}>
             <FontAwesomeIcon icon={faCog} />

@@ -28,18 +28,10 @@
 
 /* mui */
 
-/*/.MuiSvgIcon-root{
-//     margin:0px 0px 24px;
-/ }*/
 
 .MuiAppBar-root {
   height: 35px; /* Adjust based on your needs */
     margin: 0; /* Remove any default margin */
-}
-
-.MuiPaper-root {
-
-
 }
 
 
@@ -48,10 +40,6 @@
     line-height: 1;
   height: 35px;
   font-size: 1rem;
-
-
-
-
   
 }
 
@@ -71,14 +59,13 @@ height: 35px;
 }
 
 
-
-/*  **********************************************************************end MUI BULLSHIT */
-
+/*  *****************end MUI */
 
 
 
 
-/*  **********************************************************************react flow */
+
+/*  ****************react flow */
 
 
 
@@ -132,42 +119,7 @@ h1, h2, h3 {
   width: 100%;
 }
 
-/* top bar nonsense ************************** ;***/ 
 
-.TopBarContent {
-  display: flex;
-  align-items: center; /* Change from flex to center to vertically align items */
-  justify-content: space-between;
-  background-color: rgba(49, 47, 47, 0.07);
-  height: 35px;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-}
-
-.TopBarPanel {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Ensure the top bar is above other content */
-}
-
-.UserMenuPanel {
-  margin-top:0px;
-margin-right: 0px;
-}
-
-
-
-.App-logo {
-  
-  height: 22px;
-  width: 22px;
-  pointer-events: none;
-  animation: App-logo-spin infinite 20s linear;
-
-}
 
 .MuiButtonBase-root {
  
@@ -177,33 +129,10 @@ margin-right: 0px;
 
 .small-icon {
   font-size: 18px !important;
+  color: #90caf9;
+  fill: #90caf9;
 }
 
-
-.userAccountMenu {
-  height: 50px;
-margin-left: 12px;
-margin-top: -14px;
-
-}
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
 
@@ -331,136 +260,7 @@ overflow:hidden;
 .tradingview-widget-container {
   
 
-
 }
-
-
-/* ORDER BOOK STUFF ********************************************/ 
-
-
-
-
-.switches {
-  display: flex;
-  flex-direction: column;
-}
-
-.switch {
-  margin-top: 8px;
-}
-
-.switch input[type="checkbox"] {
-  display: none;
-}
-
-.switch label {
-  cursor: pointer;
-}
-
-
-.orderWidget {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  height: 100%;
-  overflow-y: auto;
-  border: 1px solid rgba(255, 255, 255, 0.12); 
-  background-Color: rgba(255, 255, 255, 0.04); 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
-padding: 19px;
-}
-
-.order-widget-content .MuiTypography-root, 
-.order-widget-content .MuiInputBase-input, 
-.order-widget-content .MuiInputLabel-root, 
-.order-widget-content .MuiFormControlLabel-label {
- font-size: 0.875rem;  /* Adjust the font size as needed */
-
-}
-
-.MuiInputBase-root {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-
-.order-widget-content .MuiInputBase-root {
-  height: 32px; /* Adjust the height of input fields */
-}
-
-.order-widget-content .MuiSwitch-root {
-  height: 20px; /* Adjust the height of switches */
-}
-
-.custom-text-field {
-   padding:15px;
-}
-
-.custom-text-field .MuiInputBase-root {
-  height: 32px; /* Reduced height */
-  font-size: 0.875rem; /* Reduced font size */
-}
-
-.custom-text-field .MuiInputBase-root input {
-  padding: 6px 12px; /* Adjust padding to align text vertically */
-}
-
-.custom-text-field .MuiInputLabel-root {
-  font-size: 0.875rem; /* Reduced label font size */
-  line-height: 0.8rem; /* Adjust if necessary to align the label */
-  top: 0px; /* Adjust if necessary to align the label */
-  left: 15px; /* Adjust if necessary for horizontal alignment */
-  
-}
-
-.custom-text-field .MuiInputLabel-shrink {
-  transform: translate(0, 1.5px) scale(0.75); /* Adjust label position when focused */
-}
-
-
-.order-container {
-  display: flex;
-  width: 100%; /* Full width of the parent element */
-  align-items: center;
-  flex-wrap: nowrap; /* Prevents the items from wrapping onto the next line */
-
-}
-
-.percentage-box {
-  flex: 0 0 auto; /* Don't grow, don't shrink, and based on width */
-  width: 40px; /* Fixed width for the percentage box */
-  height: 20px; /* Fixed width for the percentage box */
-  padding: 2px;
-  border: 1px solid ;
-  text-align: center;
-  font-size: 10px; /* Smaller font size */
-  margin-right: 5px; /* Margin to separate from the buttons */
-
-}
-
-.order-button {
-  flex: 1; /* Grow to fill the container */
-  padding: 2px 5px;
-  font-size: 12px; /* Smaller font size */
-  border-radius: 1px;
-  margin-right: 2px;
-}
-
-/* you can use the following selector to remove margin from the last button. */
-.order-button:last-child {
-  margin-right: 2px;
-}
-
-/* Override Material-UI ToggleButton styles */
-.order-button.MuiToggleButton-root {
-  flex: 1; /* Grow to fill the container */
-  height: 10px; /* Override default height */
-  width: 150px;
-  margin-top: 10px; /* Override default margin */
-  font-size: 0.875rem; 
-  /* More overrides if needed */
-}
-
 
   .widget-container { 
   display: flex;
