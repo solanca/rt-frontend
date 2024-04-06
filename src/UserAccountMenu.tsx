@@ -69,7 +69,7 @@ const UserAccountMenu = () => {
 }}>
   <Typography variant="subtitle1" sx={{ my: 1, fontSize: "0.8rem" , backgroundColor: 'transparent' }}>
     
-      Schema: waverider 0.0.1
+      Schema: 0.0.1
   
   </Typography>
 </MenuItem>
