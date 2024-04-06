@@ -20,6 +20,7 @@ import "../assets/css/topbar.css";
 import "../assets/css/left-menu.css";
 import "../assets/css/trade-terminal-widgets.css";
 import "../assets/css/right-panel.css";
+import "../assets/css/react-flow.css";
 
 
 import {FlowSchemaIcon} from "../assets/icons/schema.tsx";
