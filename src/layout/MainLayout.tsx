@@ -26,7 +26,7 @@ import "../assets/css/react-flow.css";
 import {FlowSchemaIcon} from "../assets/icons/left-menu/schema.tsx";
 import {PortfolioIcon} from "../assets/icons/left-menu/portfolio.tsx";
 import {AnalyticsIcon} from "../assets/icons/left-menu/analytics.tsx";
-
+import {TradeTerminalIcon} from "../assets/icons/left-menu/trade-terminal.tsx";
 
 //icons n graphic stuff
 
@@ -110,7 +110,7 @@ const MainLayout: React.FC = () => {
             <FontAwesomeIcon icon={faHome} />
           </Button>
           <Button onClick={() => navigate("/trade")}>
-            <FontAwesomeIcon icon={faChartLine} />
+          <TradeTerminalIcon className="small-icon"/>
           </Button>
           <Button onClick={() => navigate("/flow")}>
           <FlowSchemaIcon className="small-icon"/>

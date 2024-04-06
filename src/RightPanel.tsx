@@ -1,22 +1,32 @@
 // RightPanel.js
 import React from 'react';
 import { Tooltip, IconButton } from '@mui/material';
+
+import {WatchlistIcon} from "./assets/icons/right-panel/watchlist.tsx";
+import {AlertsIcon} from "./assets/icons/right-panel/alerts.tsx";
+import {HotlistIcon} from "./assets/icons/right-panel/hotlist.tsx";
+import {CalendarIcon} from "./assets/icons/right-panel/calendar.tsx";
+import {NotesIcon} from "./assets/icons/right-panel/notes.tsx";
+import {ChatsIcon} from "./assets/icons/right-panel/chats.tsx";
+import {IdeasIcon} from "./assets/icons/right-panel/ideas.tsx";
+import {LivestreamIcon} from "./assets/icons/right-panel/livestream.tsx";
+import {CalculatorIcon} from "./assets/icons/right-panel/calculator.tsx";
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faList,
-  faBell,
-  faFire,
-  faCalendarAlt,
-  faStickyNote,
   faComments,
   faLightbulb,
   faBroadcastTower,
   faCalculator,
 } from '@fortawesome/free-solid-svg-icons';
+
 import { PanelType } from './types';
+
 type Props = {
   setActivePanel:React.Dispatch<React.SetStateAction<PanelType|null>>
 }
+
 const RightPanel = ({ setActivePanel }:Props) => {
   // Function to toggle panels
   const togglePanel = (panel:PanelType) => {
@@ -27,47 +37,65 @@ const RightPanel = ({ setActivePanel }:Props) => {
     <div className="right-sidebar">
       <Tooltip title="Watchlist" placement="left">
         <IconButton onClick={() => togglePanel('watchlist')}>
-          <FontAwesomeIcon icon={faList} />
+          <div className="panel-small-icon">
+        <WatchlistIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Alerts" placement="left">
         <IconButton onClick={() => togglePanel('alerts')}>
-          <FontAwesomeIcon icon={faBell} />
+        <div className="panel-small-icon">
+        <AlertsIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Hotlist" placement="left">
         <IconButton onClick={() => togglePanel('hotlist')}>
-          <FontAwesomeIcon icon={faFire} />
+        <div className="panel-small-icon">
+        <HotlistIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Calendar" placement="left">
         <IconButton onClick={() => togglePanel('calendar')}>
-          <FontAwesomeIcon icon={faCalendarAlt} />
+        <div className="panel-small-icon">
+        <CalendarIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Notes" placement="left">
         <IconButton onClick={() => togglePanel('notes')}>
-          <FontAwesomeIcon icon={faStickyNote} />
+        <div className="panel-small-icon">
+        <NotesIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Chats" placement="left">
         <IconButton onClick={() => togglePanel('chats')}>
-          <FontAwesomeIcon icon={faComments} />
+        <div className="panel-small-icon">
+        <ChatsIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Ideas Stream" placement="left">
         <IconButton onClick={() => togglePanel('ideasStream')}>
-          <FontAwesomeIcon icon={faLightbulb} />
+        <div className="panel-small-icon">
+        <IdeasIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Live Streams" placement="left">
         <IconButton onClick={() => togglePanel('liveStreams')}>
-          <FontAwesomeIcon icon={faBroadcastTower} />
+        <div className="panel-small-icon">
+        <LivestreamIcon />
+          </div>
         </IconButton>
       </Tooltip>
       <Tooltip title="Calculator" placement="left">
         <IconButton onClick={() => togglePanel('calculator')}>
-          <FontAwesomeIcon icon={faCalculator} />
+        <div className="panel-small-icon">
+        <CalculatorIcon />
+          </div>
         </IconButton>
       </Tooltip>
     </div>
