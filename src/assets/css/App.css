@@ -106,9 +106,6 @@ MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-e
 
 
 
-/* end top bar ***********************************************/ 
-
-
 .content-container {
   padding-top: 35px;
   display: flex; 
